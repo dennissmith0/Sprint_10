@@ -13,7 +13,8 @@ LIMIT 10;
 """
 
 avg_hire_age = """
-SELECT AVG(STRFTIME('%Y', HireDate) - STRFTIME('%Y', BirthDate)) AS Avg_Hire_Age 
+SELECT AVG(STRFTIME('%Y', HireDate) - STRFTIME('%Y', BirthDate)) 
+AS Avg_Hire_Age
 FROM Employee;
 """
 
