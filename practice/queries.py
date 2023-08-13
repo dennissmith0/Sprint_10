@@ -93,6 +93,31 @@ query4 = """SELECT level, COUNT(*) FROM charactercreator_character
 curs.execute(query4)
 print("Number of characters for each level: ", curs.fetchall(), "\n")
 
+
+'''
+Query Exercise:
+Find the average weight of items carried by characters whose level is greater than 10.
+
+Hint:
+You'll want to use the AVG aggregate function to calculate the average weight of items.
+You'll also need to perform a JOIN operation between the tables that contain character information (charactercreator_character) and item information (charactercreator_character_inventory, armory_item).
+
+Your query should include:
+A SELECT clause that applies the AVG function to calculate the average weight of items.
+A series of JOIN operations to combine the tables containing character information and item information.
+A WHERE clause to filter characters whose level is greater than 10.
+Necessary GROUP BY or other clauses to properly structure the query.
+'''
+query5 = """SELECT AVG(weight) FROM charactercreator_character_inventory
+            JOIN armory_item
+            ON charactercreator_character_inventory.item_id = armory_item.item_id
+            JOIN charactercreator_character
+            ON charactercreator_character_inventory.character_id = charactercreator_character.character_id
+            WHERE charactercreator_character.level > 10;"""
+curs.execute(query5)
+print("Average weight of items carried by characters whose level is greater than 10: ", curs.fetchall(), "\n")
+
+
 '''
 Query Exercise:
 Join the charactercreator_character table with the charactercreator_character_inventory table to display the total number of items each character has.
