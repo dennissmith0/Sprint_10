@@ -67,7 +67,7 @@ FROM (
 );
 """
 curs.execute(query8)
-print("Average itemsper character: ", curs.fetchone()[0])
+print("Average items per character: ", curs.fetchone()[0])
 
 # Character Weapons Average - to find out on average how many weapons each character has,
 # average the counts from the CHARACTER_WEAPONS query.
