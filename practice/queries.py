@@ -108,6 +108,7 @@ A series of JOIN operations to combine the tables containing character informati
 A WHERE clause to filter characters whose level is greater than 10.
 Necessary GROUP BY or other clauses to properly structure the query.
 '''
+
 query5 = """SELECT AVG(weight) FROM charactercreator_character_inventory
             JOIN armory_item
             ON charactercreator_character_inventory.item_id = armory_item.item_id
